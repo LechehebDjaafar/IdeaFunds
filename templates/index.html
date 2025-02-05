@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة استثمار الطلاب</title>
+    <link href="/static/build.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-indigo-600">منصة استثمار الطلاب</a>
+            <ul class="flex space-x-6">
+                {% if current_user.is_authenticated %}
+                    <li><a href="/dashboard_student" class="text-gray-700 hover:text-indigo-600">لوحة الطالب</a></li>
+                    <li><a href="/dashboard_investor" class="text-gray-700 hover:text-indigo-600">لوحة المستثمر</a></li>
+                    <li><a href="/logout" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">تسجيل خروج</a></li>
+                {% else %}
+                    <li><a href="/login" class="text-gray-700 hover:text-indigo-600">تسجيل دخول</a></li>
+                    <li><a href="/register" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">إنشاء حساب</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-8">مرحبًا بكم في منصة استثمار الطلاب</h1>
+            <p class="text-lg text-center text-gray-700 mb-8">
+                منصة تربط بين الطلاب أصحاب الأفكار المبتكرة والمستثمرين الذين يبحثون عن فرص استثمارية.
+            </p>
+            <div class="flex justify-center">
+                <a href="/login" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700">ابدأ الآن</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
