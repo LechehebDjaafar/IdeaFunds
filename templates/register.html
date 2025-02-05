@@ -5,34 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل جديد</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/static/build.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mt-5">
-        <h2 class="mb-4">إنشاء حساب جديد</h2>
-        <form method="POST" action="/register">
-            <div class="form-group">
-                <label for="username">اسم المستخدم:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">إنشاء حساب جديد</h2>
+        <form method="POST" action="/register" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">اسم المستخدم:</label>
+                <input type="text" id="username" name="username" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <div class="form-group">
-                <label for="email">البريد الإلكتروني:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <div class="form-group">
-                <label for="password">كلمة المرور:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">كلمة المرور:</label>
+                <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <div class="form-group">
-                <label for="role">الدور:</label>
-                <select class="form-control" id="role" name="role" required>
+            <div>
+                <label for="role" class="block text-sm font-medium text-gray-700">الدور:</label>
+                <select id="role" name="role" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="student">طالب</option>
                     <option value="investor">مستثمر</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary">إنشاء الحساب</button>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">إنشاء الحساب</button>
         </form>
-        <p class="mt-3">لديك حساب؟ <a href="/login">سجل دخولك الآن</a>.</p>
+        <p class="mt-4 text-center">
+            لديك حساب؟ <a href="/login" class="text-indigo-600 hover:underline">سجل دخولك الآن</a>.
+        </p>
     </div>
 </body>
 </html>

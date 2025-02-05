@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل دخول</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/static/build.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container mt-5">
-        <h2 class="mb-4">تسجيل دخول</h2>
-        <form method="POST" action="/login">
-            <div class="form-group">
-                <label for="email">البريد الإلكتروني:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">تسجيل دخول</h2>
+        <form method="POST" action="/login" class="space-y-4">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <div class="form-group">
-                <label for="password">كلمة المرور:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">كلمة المرور:</label>
+                <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <button type="submit" class="btn btn-primary">تسجيل دخول</button>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">تسجيل دخول</button>
         </form>
-        <p class="mt-3">ليس لديك حساب؟ <a href="/register">قم بإنشاء حساب الآن</a>.</p>
+        <p class="mt-4 text-center">
+            ليس لديك حساب؟ <a href="/register" class="text-indigo-600 hover:underline">قم بإنشاء حساب الآن</a>.
+        </p>
     </div>
 </body>
 </html>

@@ -1,32 +1,33 @@
+<!-- templates/add_project.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إضافة مشروع</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/static/build.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1 class="mt-4">إضافة مشروع جديد</h1>
-        <form method="POST" action="/add_project">
-            <div class="form-group">
-                <label for="title">عنوان المشروع:</label>
-                <input type="text" class="form-control" id="title" name="title" required>
+<body class="bg-gray-100 flex justify-center items-center min-h-screen">
+    <div class="bg-white p-8 rounded shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">إضافة مشروع جديد</h2>
+        <form method="POST" action="/add_project" class="space-y-4">
+            <div>
+                <label for="title" class="block text-sm font-medium text-gray-700">عنوان المشروع:</label>
+                <input type="text" id="title" name="title" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <div class="form-group">
-                <label for="description">وصف المشروع:</label>
-                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            <div>
+                <label for="description" class="block text-sm font-medium text-gray-700">وصف المشروع:</label>
+                <textarea id="description" name="description" rows="3" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
             </div>
-            <div class="form-group">
-                <label for="target_amount">المبلغ المطلوب:</label>
-                <input type="number" class="form-control" id="target_amount" name="target_amount" required>
+            <div>
+                <label for="target_amount" class="block text-sm font-medium text-gray-700">المبلغ المطلوب:</label>
+                <input type="number" step="0.01" id="target_amount" name="target_amount" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <div class="form-group">
-                <label for="image_url">رابط الصورة (اختياري):</label>
-                <input type="text" class="form-control" id="image_url" name="image_url">
+            <div>
+                <label for="image_url" class="block text-sm font-medium text-gray-700">رابط الصورة (اختياري):</label>
+                <input type="text" id="image_url" name="image_url" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
             </div>
-            <button type="submit" class="btn btn-primary">إضافة المشروع</button>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700">إضافة المشروع</button>
         </form>
     </div>
 </body>
