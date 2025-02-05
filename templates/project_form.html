@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Add New Project</h1>
+<form method="POST" class="space-y-4">
+    <input type="text" name="title" placeholder="Project Title" class="p-2 w-full border rounded-md" required>
+    <textarea name="description" placeholder="Project Description" class="p-2 w-full border rounded-md" rows="5" required></textarea>
+    <input type="number" step="0.01" name="required_amount" placeholder="Required Investment Amount ($)" class="p-2 w-full border rounded-md" required>
+    <select name="sector" class="p-2 w-full border rounded-md" required>
+        <option value="technology">Technology</option>
+        <option value="education">Education</option>
+        <option value="health">Health</option>
+        <option value="environment">Environment</option>
+        <option value="other">Other</option>
+    </select>
+    <button type="submit" class="p-2 w-full bg-green-500 text-white rounded-md hover:bg-green-600">Submit Project</button>
+    
+</form>
+<a href="{{ url_for('dashboard') }}" class="block mt-4 p-2 bg-gray-500 text-white rounded-md hover:bg-gray-600">Back to Dashboard</a>
+{% endblock %}

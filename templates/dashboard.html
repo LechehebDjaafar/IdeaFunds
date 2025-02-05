@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+
+{% if current_user.role == 'student' %}
+    <a href="{{ url_for('add_project') }}" class="p-2 bg-green-500 text-white rounded-md hover:bg-green-600 mb-4">Add New Project</a>
+    <h2 class="text-lg font-bold mb-2">Your Projects:</h2>
+    {% if projects %}
+    <ul class="list-disc ml-6">
+        {% for project in projects %}
+        <li class="mb-2">
+            <strong>{{ project.title }}</strong> - Sector: {{ project.sector }} | Required Amount: ${{ project.required_amount }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-gray-500">You haven't added any projects yet.</p>
+    {% endif %}
+
+{% elif current_user.role == 'investor' %}
+    <h2 class="text-lg font-bold mb-2">Projects to Invest:</h2>
+    {% if projects %}
+    <ul class="list-disc ml-6">
+        {% for project in projects %}
+        <li class="mb-2">
+            <strong>{{ project.title }}</strong> - Sector: {{ project.sector }} | Required Amount: ${{ project.required_amount }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="text-gray-500">No projects available at the moment.</p>
+    {% endif %}
+{% endif %}
+
+{% endblock %}
