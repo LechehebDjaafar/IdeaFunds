@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة مشروع</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">إضافة مشروع جديد</h1>
+        <form method="POST" action="/add_project">
+            <div class="form-group">
+                <label for="title">عنوان المشروع:</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">وصف المشروع:</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="target_amount">المبلغ المطلوب:</label>
+                <input type="number" class="form-control" id="target_amount" name="target_amount" required>
+            </div>
+            <div class="form-group">
+                <label for="image_url">رابط الصورة (اختياري):</label>
+                <input type="text" class="form-control" id="image_url" name="image_url">
+            </div>
+            <button type="submit" class="btn btn-primary">إضافة المشروع</button>
+        </form>
+    </div>
+</body>
+</html>
